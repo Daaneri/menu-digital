@@ -3,7 +3,6 @@ export default function Home() {
     <main style={{display:'flex',justifyContent:'center',padding:'20px',background:'#111',minHeight:'100vh'}}>
       <div style={{width:'100%',maxWidth:'390px',background:'#fff',borderRadius:'24px',overflow:'hidden',fontFamily:'sans-serif'}}>
         
-        {/* Hero */}
         <div style={{background:'#1a1a1a',padding:'28px 20px 16px',textAlign:'center'}}>
           <div style={{width:'64px',height:'64px',borderRadius:'16px',background:'#D85A30',display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 10px',fontSize:'32px'}}>🥩</div>
           <div style={{fontSize:'20px',fontWeight:'600',color:'#fff',marginBottom:'2px'}}>La Parrilla del Centro</div>
@@ -15,7 +14,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Menu */}
         <MenuSection title="🔥 Parrilla" items={[
           {name:'Asado 400g',desc:'Costillar vacuno a la parrilla',price:'$5.800'},
           {name:'Bife de chorizo',desc:'400g, punto a elección',price:'$6.500'},
@@ -51,7 +49,6 @@ export default function Home() {
           {name:'Gaseosa',desc:'Coca, Sprite, Fanta',price:'$1.000'},
         ]}/>
 
-        {/* WhatsApp */}
         <div style={{padding:'16px',paddingBottom:'28px'}}>
           <a href="https://wa.me/5493400421234?text=Hola!%20Vi%20el%20men%C3%BA%20y%20quiero%20hacer%20un%20pedido"
             style={{display:'flex',alignItems:'center',justifyContent:'center',gap:'8px',background:'#25D366',color:'#fff',padding:'14px',borderRadius:'12px',textDecoration:'none',fontSize:'15px',fontWeight:'500'}}>
@@ -64,7 +61,9 @@ export default function Home() {
   )
 }
 
-function MenuSection({title, items}: {title: string, items: {name: string, desc: string, price: string}[]}) {
+type Item = {name: string, desc: string, price: string}
+
+function MenuSection({title, items}: {title: string, items: Item[]}) {
   return (
     <div style={{padding:'16px 16px 0'}}>
       <div style={{fontSize:'14px',fontWeight:'600',color:'#333',marginBottom:'10px'}}>{title}</div>
