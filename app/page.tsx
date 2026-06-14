@@ -64,7 +64,7 @@ export default function Home() {
   )
 }
 
-function MenuSection({title, items}) {
+function MenuSection({title, items}: {title: string, items: {name: string, desc: string, price: string}[]}) {
   return (
     <div style={{padding:'16px 16px 0'}}>
       <div style={{fontSize:'14px',fontWeight:'600',color:'#333',marginBottom:'10px'}}>{title}</div>
